@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-warmBlack: #3A3845;
+    --color-beigePeach: #F7CCAC;
+    --color-lightBrown: #C69B7B;
+    --color-darkBrown: #826F66;
+    --color-natural-700: #595667;
+    --color-bannerText: #FFFDFB;
+
+    --font-mainFamily: "Inter", sans-serif;
+    --font-secondryFamily: "EB Garamond", serif;
+}
+
+.container {
+    padding: 22px 165px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 992px) {
+            padding: 24.5px 80px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 24.5px 20px;
+        }
+
+        #menu-icon {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+
+            a {
+                color: var(--color-warmBlack);
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: normal;
+                font-family: var(--font-mainFamily);
+
+                &:hover {
+                    color: var(--color-darkBrown);
+                }
+            }
+
+            a.active {
+                font-weight: bold;
+                color: var(--color-darkBrown);
+            }
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            svg {
+                color: var(--color-natural-700);
+
+                &:hover {
+                    color: var(--color-darkBrown);
+                }
+            }
+        }
+    }
+}
+
+section.hero-section {
+    width: 100%;
+    position: relative;
+
+    img.hero-img {
+        width: 100%;
+    }
+
+    .banner {
+        position: absolute;
+        top: 0;
+        bottom: 4px;
+        left: 165px;
+        background-color: var(--color-darkBrown);
+        width: fit-content;
+        padding: 161px 73.5px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+
+        .banner-text {
+            text-align: center;
+
+            p {
+                color: var(--color-bannerText);
+                font-family: var(--font-mainFamily);
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: normal;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                color: var(--color-bannerText);
+                font-family: var(--font-secondryFamily);
+                font-size: 36px;
+                line-height: 40px;
+                font-weight: bold;
+            }
+        }
+
+        button {
+            padding: 15px 18px;
+            background-color: white;
+            border: none;
+            color: var(--color-darkBrown);
+            font-family: var(--font-mainFamily);
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            width: 80%;
+
+            &:hover {
+                background-color: transparent;
+                border: white 1px solid;
+                color: white;
+            }
+        }
+    }
+}
+
+section.cards {
+    margin: 80px 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        /* justify-content: space-between; */
+        gap: 30px;
+
+        .card {
+            text-align: center;
+            width: calc((100% - 3*30px) / 4);
+
+            img {
+                width: 100%;
+            }
+
+            p {
+                margin-top: 23px;
+                color: #3A3845;
+                font-family: var(--font-mainFamily);
+                font-size: 18px;
+                line-height: 24px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+/* Responsive media query */
+/* @media (max-width: 992px) {
+    nav {
+        .container {
+            padding: 24.5px 80px;
+        }
+    }
+} */
+
+@media (max-width: 768px) {
+    nav {
+        .container {
+            padding: 24.5px 20px;
+
+            #menu-icon {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-icons {
+                svg {
+                    display: none;
+                }
+
+                #cart {
+                    display: block;
+                }
+            }
+        }
+    }
+}
